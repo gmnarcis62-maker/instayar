@@ -1,0 +1,61 @@
+{
+  "id": "tpl_new_49",
+  "title": "دکور خانه | مدرن",
+  "category": "معرفی محصول",
+  "format": "HIGHLIGHT",
+  "isVip": false,
+  "tags": [
+    "معرفی محصول",
+    "دکور خانه",
+    "قالب آماده",
+    "فارسی"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#101827",
+    "gradientColors": [
+      "#25364A",
+      "#0B1220"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.08,
+      "width": 0.84,
+      "height": 0.84,
+      "cornerRadius": 100,
+      "backgroundColor": "#243047",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 2,
+      "placeholderLabel": "images/home_decor_01.webp"
+    },
+    {
+      "id": "veil",
+      "type": "SHAPE",
+      "x": 0.18,
+      "y": 0.63,
+      "width": 0.64,
+      "height": 0.17,
+      "shapeType": "ROUNDED_RECT",
+      "cornerRadius": 18,
+      "backgroundColor": "#D91B2430"
+    },
+    {
+      "id": "heading",
+      "type": "TEXT",
+      "x": 0.16,
+      "y": 0.66,
+      "width": 0.68,
+      "height": 0.1,
+      "text": "دکور خانه",
+      "fontSize": 18,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    }
+  ]
+}

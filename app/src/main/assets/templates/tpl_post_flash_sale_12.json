@@ -1,0 +1,88 @@
+{
+  "id": "tpl_post_flash_sale_12",
+  "title": "حراج آتشین و تخفیف روزانه",
+  "category": "تخفیف و حراج",
+  "format": "POST_SQUARE",
+  "isVip": false,
+  "tags": [
+    "تخفیف",
+    "حراج",
+    "آفر_روز"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#111827",
+    "gradientColors": [
+      "#1F2937",
+      "#030712"
+    ],
+    "angle": 90
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.25,
+      "y": 0.06,
+      "width": 0.5,
+      "height": 0.05,
+      "text": "⚡ FLASH SALE ⚡",
+      "fontSize": 12,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#DC2626"
+    },
+    {
+      "id": "el_2",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.1,
+      "y": 0.14,
+      "width": 0.8,
+      "height": 0.52,
+      "cornerRadius": 20,
+      "backgroundColor": "#374151",
+      "borderColor": "#EF4444",
+      "borderWidth": 2,
+      "placeholderLabel": "images/clothing_men_01.webp"
+    },
+    {
+      "id": "el_3",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.7,
+      "width": 0.84,
+      "height": 0.06,
+      "text": "ساعت مچی لوکس مردانه هوشمند",
+      "fontSize": 16,
+      "fontWeight": "BOLD",
+      "textColor": "#F9FAFB",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.78,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "قیمت قبل: ۱,۸۰۰,۰۰۰  |  حراج: ۹۹۰,۰۰۰ تومان",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#EF4444",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_5",
+      "type": "TEXT",
+      "x": 0.15,
+      "y": 0.86,
+      "width": 0.7,
+      "height": 0.05,
+      "text": "فقط تا ساعت ۲۴ امشب ⏰",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FCA5A5",
+      "textAlign": "CENTER"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "tpl_new_02",
+  "title": "حراج آخر هفته | ویژه",
+  "category": "تخفیف و حراج",
+  "format": "POST_SQUARE",
+  "isVip": true,
+  "tags": [
+    "تخفیف و حراج",
+    "حراج آخر هفته",
+    "قالب آماده",
+    "فارسی"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#101827",
+    "gradientColors": [
+      "#25364A",
+      "#0B1220"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.06,
+      "y": 0.06,
+      "width": 0.88,
+      "height": 0.52,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/shoes_bag_01.webp"
+    },
+    {
+      "id": "heading",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.62,
+      "width": 0.84,
+      "height": 0.1,
+      "text": "حراج آخر هفته",
+      "fontSize": 22,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "desc",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.74,
+      "width": 0.8,
+      "height": 0.08,
+      "text": "انتخابی خاص برای سلیقه‌ی شما",
+      "fontSize": 13,
+      "fontWeight": "MEDIUM",
+      "textColor": "#E2E8F0",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "cta",
+      "type": "BADGE",
+      "x": 0.22,
+      "y": 0.84,
+      "width": 0.56,
+      "height": 0.07,
+      "text": "مشاهده و سفارش",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#0F766E"
+    }
+  ]
+}

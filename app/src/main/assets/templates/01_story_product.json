@@ -1,0 +1,128 @@
+{
+  "id": "tpl_story_product_01",
+  "title": "معرفی شیک پوشاک و کفش",
+  "category": "معرفی محصول",
+  "format": "STORY",
+  "isVip": false,
+  "tags": [
+    "لباس",
+    "استوری",
+    "مجلسی",
+    "بوتیک"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#181028",
+    "gradientColors": [
+      "#2C1252",
+      "#0F0B1E"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_brand_name",
+      "type": "BRAND_NAME",
+      "x": 0.08,
+      "y": 0.05,
+      "width": 0.5,
+      "height": 0.04,
+      "text": "بوتیک مد روز",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#F3E8FF",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_badge_new",
+      "type": "BADGE",
+      "x": 0.65,
+      "y": 0.05,
+      "width": 0.27,
+      "height": 0.035,
+      "text": "کالکشن جدید",
+      "fontSize": 11,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#EC4899"
+    },
+    {
+      "id": "el_main_image",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.52,
+      "cornerRadius": 24,
+      "backgroundColor": "#231B3D",
+      "borderColor": "#8B5CF6",
+      "borderWidth": 2,
+      "placeholderLabel": "images/bread_01.webp"
+    },
+    {
+      "id": "el_product_title",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.67,
+      "width": 0.84,
+      "height": 0.05,
+      "text": "پالتو فوتر اعلا زمستانه",
+      "fontSize": 20,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_desc",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.73,
+      "width": 0.8,
+      "height": 0.04,
+      "text": "دوخت درجه یک | در ۶ رنگ جذاب و سایزبندی کامل",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#CBD5E1",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_price_pill",
+      "type": "SHAPE",
+      "x": 0.2,
+      "y": 0.79,
+      "width": 0.6,
+      "height": 0.065,
+      "shapeType": "ROUNDED_RECT",
+      "cornerRadius": 20,
+      "backgroundColor": "#7C3AED",
+      "borderColor": "#C084FC",
+      "borderWidth": 1
+    },
+    {
+      "id": "el_price_text",
+      "type": "TEXT",
+      "x": 0.22,
+      "y": 0.795,
+      "width": 0.56,
+      "height": 0.055,
+      "text": "قیمت ویژه: ۱,۲۸۰,۰۰۰ تومان",
+      "fontSize": 15,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_cta",
+      "type": "TEXT",
+      "x": 0.15,
+      "y": 0.88,
+      "width": 0.7,
+      "height": 0.04,
+      "text": "جهت ثبت سفارش دایرکت دهید 💬",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#F472B6",
+      "textAlign": "CENTER"
+    }
+  ]
+}

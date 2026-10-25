@@ -1,0 +1,184 @@
+{
+  "id": "tpl_post_price_03",
+  "title": "لیست قیمت و منو خدمات",
+  "category": "قیمت‌نامه",
+  "format": "POST_SQUARE",
+  "isVip": false,
+  "tags": [
+    "قیمت",
+    "منو",
+    "خدمات",
+    "پست"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#0B1528",
+    "gradientColors": [
+      "#0F172A",
+      "#1E293B"
+    ],
+    "angle": 90
+  },
+  "elements": [
+    {
+      "id": "el_photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/space_earth_01.webp"
+    },
+    {
+      "id": "el_header_title",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.08,
+      "width": 0.8,
+      "height": 0.08,
+      "text": "تـعـرفـه و لـیـسـت خـدمـات",
+      "fontSize": 20,
+      "fontWeight": "BOLD",
+      "textColor": "#38BDF8",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_row1_bg",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.22,
+      "width": 0.84,
+      "height": 0.11,
+      "cornerRadius": 16,
+      "backgroundColor": "#334155"
+    },
+    {
+      "id": "el_row1_title",
+      "type": "TEXT",
+      "x": 0.45,
+      "y": 0.24,
+      "width": 0.43,
+      "height": 0.06,
+      "text": "بسته پایه طلایی",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#F8FAFC",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_row1_price",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.24,
+      "width": 0.35,
+      "height": 0.06,
+      "text": "۴۵۰,۰۰۰ ت",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#38BDF8",
+      "textAlign": "LEFT"
+    },
+    {
+      "id": "el_row2_bg",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.36,
+      "width": 0.84,
+      "height": 0.11,
+      "cornerRadius": 16,
+      "backgroundColor": "#334155"
+    },
+    {
+      "id": "el_row2_title",
+      "type": "TEXT",
+      "x": 0.45,
+      "y": 0.38,
+      "width": 0.43,
+      "height": 0.06,
+      "text": "بسته حرفه‌ای VIP",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#F8FAFC",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_row2_price",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.38,
+      "width": 0.35,
+      "height": 0.06,
+      "text": "۸۹۰,۰۰۰ ت",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#38BDF8",
+      "textAlign": "LEFT"
+    },
+    {
+      "id": "el_row3_bg",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.5,
+      "width": 0.84,
+      "height": 0.11,
+      "cornerRadius": 16,
+      "backgroundColor": "#334155"
+    },
+    {
+      "id": "el_row3_title",
+      "type": "TEXT",
+      "x": 0.45,
+      "y": 0.52,
+      "width": 0.43,
+      "height": 0.06,
+      "text": "مشاوره اختصاصی ۱ ساعته",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#F8FAFC",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_row3_price",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.52,
+      "width": 0.35,
+      "height": 0.06,
+      "text": "۳۵۰,۰۰۰ ت",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#38BDF8",
+      "textAlign": "LEFT"
+    },
+    {
+      "id": "el_footer_note",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.68,
+      "width": 0.84,
+      "height": 0.08,
+      "text": "پشتیبانی ۲۴ ساعته و ضمانت کیفیت",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#94A3B8",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_phone",
+      "type": "BRAND_CONTACT",
+      "x": 0.1,
+      "y": 0.82,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "تلفن تماس: ۰۹۱۲۳۴۵۶۷۸۹",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    }
+  ]
+}

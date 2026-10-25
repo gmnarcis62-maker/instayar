@@ -1,0 +1,102 @@
+{
+  "id": "tpl_story_giveaway_16",
+  "title": "مسابقه بزرگ و قرعه‌کشی هفتگی",
+  "category": "تخفیف و حراج",
+  "format": "STORY",
+  "isVip": true,
+  "tags": [
+    "مسابقه",
+    "جایزه",
+    "قرعه_کشی",
+    "استوری"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#3B0764",
+    "gradientColors": [
+      "#4C1D95",
+      "#831843"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.25,
+      "y": 0.05,
+      "width": 0.5,
+      "height": 0.04,
+      "text": "🎁 مسابقه و جایزه نقدی",
+      "fontSize": 12,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#D946EF"
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.11,
+      "width": 0.84,
+      "height": 0.07,
+      "text": "۱۰ جایزه ۱ میلیون تومانی",
+      "fontSize": 22,
+      "fontWeight": "BOLD",
+      "textColor": "#FDE047",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.1,
+      "y": 0.2,
+      "width": 0.8,
+      "height": 0.44,
+      "cornerRadius": 24,
+      "backgroundColor": "#581C87",
+      "borderColor": "#E879F9",
+      "borderWidth": 2.5,
+      "placeholderLabel": "images/cake_01.webp"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.67,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "شرایط خیلی راحته:",
+      "fontSize": 15,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_5",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.73,
+      "width": 0.8,
+      "height": 0.08,
+      "text": "۱. این پست رو لایک و سیو کن\n۲. ۳ تا از دوستاتو منشن کن",
+      "fontSize": 13,
+      "fontWeight": "NORMAL",
+      "textColor": "#F5D0FE",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_6",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.84,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "قرعه‌کشی آنلاین جمعه ساعت ۲۲ 🔮",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FDE047",
+      "textAlign": "CENTER"
+    }
+  ]
+}

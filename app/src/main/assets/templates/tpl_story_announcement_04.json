@@ -1,0 +1,141 @@
+{
+  "id": "tpl_story_announcement_04",
+  "title": "اطلاعیه مهم ارسال سفارشات",
+  "category": "اطلاعیه",
+  "format": "STORY",
+  "isVip": false,
+  "tags": [
+    "اطلاعیه",
+    "ارسال",
+    "پست",
+    "خبر"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#1E1B4B",
+    "gradientColors": [
+      "#312E81",
+      "#1E1B4B"
+    ],
+    "angle": 120
+  },
+  "elements": [
+    {
+      "id": "el_photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/clothing_men_01.webp"
+    },
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.3,
+      "y": 0.08,
+      "width": 0.4,
+      "height": 0.04,
+      "text": "📢 اطلاعیه فوری",
+      "fontSize": 12,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#F59E0B"
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.16,
+      "width": 0.84,
+      "height": 0.07,
+      "text": "زمان‌بندی ارسال سفارشات عید",
+      "fontSize": 20,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.26,
+      "width": 0.84,
+      "height": 0.48,
+      "shapeType": "ROUNDED_RECT",
+      "cornerRadius": 20,
+      "backgroundColor": "#2E2A72",
+      "borderColor": "#6366F1",
+      "borderWidth": 1.5
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.3,
+      "width": 0.76,
+      "height": 0.08,
+      "text": "مشتریان گرامی، به دلیل شلوغی پایان سال کلیه سفارشات ثبت شده تا ۲۵ اسفندماه تحویل پست داده خواهند شد.",
+      "fontSize": 14,
+      "fontWeight": "NORMAL",
+      "textColor": "#E0E7FF",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_5",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.42,
+      "width": 0.76,
+      "height": 0.06,
+      "text": "⚡ ارسال با تیپاکس و پست پیشتاز",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#A5B4FC",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_6",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.5,
+      "width": 0.76,
+      "height": 0.06,
+      "text": "📦 کد رهگیری به شماره همراه شما پیامک می‌شود.",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#C7D2FE",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_7",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.6,
+      "width": 0.76,
+      "height": 0.06,
+      "text": "از صبوری و همراهی شما سپاسگزاریم ❤️",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#F472B6",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_8",
+      "type": "BRAND_NAME",
+      "x": 0.1,
+      "y": 0.82,
+      "width": 0.8,
+      "height": 0.04,
+      "text": "مدیریت فروشگاه",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#E0E7FF",
+      "textAlign": "CENTER"
+    }
+  ]
+}

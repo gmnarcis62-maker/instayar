@@ -1,0 +1,89 @@
+{
+  "id": "tpl_post_beauty_10",
+  "title": "معرفی خدمات سالن زیبایی و آرایشگاه",
+  "category": "معرفی محصول",
+  "format": "POST_SQUARE",
+  "isVip": true,
+  "tags": [
+    "زیبایی",
+    "آرایشگاه",
+    "ناخن",
+    "میکاپ"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#500724",
+    "gradientColors": [
+      "#700B36",
+      "#2E0315"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.3,
+      "y": 0.06,
+      "width": 0.4,
+      "height": 0.05,
+      "text": "🌸 سالن تخصصی زیبایی",
+      "fontSize": 11,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#BE185D"
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.13,
+      "width": 0.84,
+      "height": 0.08,
+      "text": "خدمات VIP رنگ و لایت تخصصی",
+      "fontSize": 18,
+      "fontWeight": "BOLD",
+      "textColor": "#FCE7F3",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.1,
+      "y": 0.23,
+      "width": 0.8,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#831843",
+      "borderColor": "#F472B6",
+      "borderWidth": 2,
+      "placeholderLabel": "images/gaming_toys_01.webp"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.74,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "رزرو نوبت اسفند با تخفیف ویژه ۲۰٪",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FBCFE8",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_5",
+      "type": "BRAND_CONTACT",
+      "x": 0.1,
+      "y": 0.83,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "شماره رزرو: ۰۹۱۲۳۴۵۶۷۸۹ 📞",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    }
+  ]
+}

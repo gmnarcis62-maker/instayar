@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Ghalibino" parent="android:Theme.DeviceDefault.NoActionBar">
+        <item name="android:windowBackground">#13091F</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="31">#13091F</item>
+        <item name="android:statusBarColor">#13091F</item>
+        <item name="android:navigationBarColor">#13091F</item>
+    </style>
+    <style name="Theme.MyApplication" parent="Theme.Ghalibino" />
+</resources>

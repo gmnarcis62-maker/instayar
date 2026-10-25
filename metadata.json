@@ -1,0 +1,7 @@
+{
+  "name": "قالبینو - ساخت قالب استوری و پست",
+  "description": "ساخت سریع و حرفه‌ای قالب استوری و پست اینستاگرام برای فروشگاه‌ها و کسب‌وکارها بدون نیاز به اینترنت",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

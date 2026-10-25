@@ -1,0 +1,102 @@
+{
+  "id": "tpl_story_jewelry_13",
+  "title": "طلا، جواهر و اکسسوری فاخر",
+  "category": "معرفی محصول",
+  "format": "STORY",
+  "isVip": true,
+  "tags": [
+    "طلا",
+    "جواهر",
+    "اکسسوری",
+    "لوکس"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#1A1406",
+    "gradientColors": [
+      "#2D230B",
+      "#0C0902"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.28,
+      "y": 0.06,
+      "width": 0.44,
+      "height": 0.04,
+      "text": "👑 گالری طلای لوکس",
+      "fontSize": 12,
+      "fontWeight": "BOLD",
+      "textColor": "#1A1406",
+      "backgroundColor": "#F59E0B"
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.06,
+      "text": "دستبند کارتیه البرنادو طلای ۱۸ عیار",
+      "fontSize": 18,
+      "fontWeight": "BOLD",
+      "textColor": "#FEF3C7",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.1,
+      "y": 0.2,
+      "width": 0.8,
+      "height": 0.48,
+      "cornerRadius": 26,
+      "backgroundColor": "#3D3012",
+      "borderColor": "#FBBF24",
+      "borderWidth": 2.5,
+      "placeholderLabel": "images/clothing_women_01.webp"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.71,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "وزن: ۴.۳۵۰ گرم  |  اجرت ساخت فقط ۵٪",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FDE68A",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_5",
+      "type": "TEXT",
+      "x": 0.15,
+      "y": 0.78,
+      "width": 0.7,
+      "height": 0.05,
+      "text": "همراه با فاکتور رسمی معتبر طلافروشی",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#D1D5DB",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_6",
+      "type": "BRAND_NAME",
+      "x": 0.1,
+      "y": 0.86,
+      "width": 0.8,
+      "height": 0.04,
+      "text": "ارسال با بیمه پست به سراسر ایران ✈️",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FCD34D",
+      "textAlign": "CENTER"
+    }
+  ]
+}

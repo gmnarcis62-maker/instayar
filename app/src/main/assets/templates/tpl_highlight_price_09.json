@@ -1,0 +1,74 @@
+{
+  "id": "tpl_highlight_price_09",
+  "title": "کاور هایلایت لیست قیمت",
+  "category": "قیمت‌نامه",
+  "format": "HIGHLIGHT",
+  "isVip": true,
+  "tags": [
+    "هایلایت",
+    "قیمت",
+    "کاور"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#2E1065",
+    "gradientColors": [
+      "#3B0764",
+      "#0F021D"
+    ],
+    "angle": 90
+  },
+  "elements": [
+    {
+      "id": "el_photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/restaurant_01.webp"
+    },
+    {
+      "id": "el_1",
+      "type": "SHAPE",
+      "x": 0.18,
+      "y": 0.18,
+      "width": 0.64,
+      "height": 0.64,
+      "shapeType": "CIRCLE",
+      "backgroundColor": "#3B0764",
+      "borderColor": "#C084FC",
+      "borderWidth": 4
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.25,
+      "y": 0.36,
+      "width": 0.5,
+      "height": 0.1,
+      "text": "💎 VIP",
+      "fontSize": 16,
+      "fontWeight": "BOLD",
+      "textColor": "#F472B6",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "TEXT",
+      "x": 0.15,
+      "y": 0.52,
+      "width": 0.7,
+      "height": 0.1,
+      "text": "قیمت‌ها",
+      "fontSize": 19,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    }
+  ]
+}

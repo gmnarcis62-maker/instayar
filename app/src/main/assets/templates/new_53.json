@@ -1,0 +1,87 @@
+{
+  "id": "tpl_new_53",
+  "title": "تجربه مشتری | ویژه",
+  "category": "نظر مشتری",
+  "format": "STORY",
+  "isVip": true,
+  "tags": [
+    "نظر مشتری",
+    "تجربه مشتری",
+    "قالب آماده",
+    "فارسی"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#101827",
+    "gradientColors": [
+      "#25364A",
+      "#0B1220"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.06,
+      "y": 0.08,
+      "width": 0.88,
+      "height": 0.56,
+      "cornerRadius": 26,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/home_decor_01.webp"
+    },
+    {
+      "id": "overlay",
+      "type": "SHAPE",
+      "x": 0.06,
+      "y": 0.53,
+      "width": 0.88,
+      "height": 0.12,
+      "shapeType": "ROUNDED_RECT",
+      "cornerRadius": 18,
+      "backgroundColor": "#D9000000"
+    },
+    {
+      "id": "heading",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.55,
+      "width": 0.8,
+      "height": 0.08,
+      "text": "تجربه مشتری",
+      "fontSize": 23,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "desc",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.69,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "کیفیت خوب، انتخابی ماندگار",
+      "fontSize": 13,
+      "fontWeight": "MEDIUM",
+      "textColor": "#F8FAFC",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "cta",
+      "type": "BADGE",
+      "x": 0.23,
+      "y": 0.8,
+      "width": 0.54,
+      "height": 0.07,
+      "text": "برای سفارش پیام دهید",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#0F766E"
+    }
+  ]
+}

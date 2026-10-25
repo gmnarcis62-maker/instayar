@@ -1,0 +1,75 @@
+{
+  "id": "tpl_story_thankyou_18",
+  "title": "تشکر از خرید و اعتماد همراهان",
+  "category": "نظر مشتری",
+  "format": "STORY",
+  "isVip": false,
+  "tags": [
+    "تشکر",
+    "قدردانی",
+    "مشتری"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#31102A",
+    "gradientColors": [
+      "#4A123F",
+      "#1F051A"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.1,
+      "width": 0.8,
+      "height": 0.08,
+      "text": "یک دنیا سپاس از اعتمادتون 💖",
+      "fontSize": 20,
+      "fontWeight": "BOLD",
+      "textColor": "#F472B6",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_2",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.1,
+      "y": 0.22,
+      "width": 0.8,
+      "height": 0.46,
+      "cornerRadius": 22,
+      "backgroundColor": "#5B184D",
+      "borderColor": "#EC4899",
+      "borderWidth": 2,
+      "placeholderLabel": "images/coffee_01.webp"
+    },
+    {
+      "id": "el_3",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.71,
+      "width": 0.8,
+      "height": 0.07,
+      "text": "امروز بیش از ۱۲۰ بسته به دست پستچی رسید تا با عشق برسه دستتون!",
+      "fontSize": 14,
+      "fontWeight": "NORMAL",
+      "textColor": "#FDF2F8",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.82,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "خوشحالی شما بزرگترین انگیزه ماست ✨",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#F9A8D4",
+      "textAlign": "CENTER"
+    }
+  ]
+}

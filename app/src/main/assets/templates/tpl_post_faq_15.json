@@ -1,0 +1,148 @@
+{
+  "id": "tpl_post_faq_15",
+  "title": "پاسخ به سوالات متداول مشتریان",
+  "category": "اطلاعیه",
+  "format": "POST_SQUARE",
+  "isVip": false,
+  "tags": [
+    "سوالات",
+    "پاسخ",
+    "پشتیبانی",
+    "پست"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#0F172A",
+    "gradientColors": [
+      "#1E293B",
+      "#020617"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/home_decor_01.webp"
+    },
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.25,
+      "y": 0.06,
+      "width": 0.5,
+      "height": 0.05,
+      "text": "❓ سوالات پرتکرار شما",
+      "fontSize": 12,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#3B82F6"
+    },
+    {
+      "id": "el_2",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.16,
+      "width": 0.84,
+      "height": 0.2,
+      "cornerRadius": 16,
+      "backgroundColor": "#334155"
+    },
+    {
+      "id": "el_3",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.18,
+      "width": 0.76,
+      "height": 0.06,
+      "text": "س: چقدر طول می‌کشه برسه؟",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#60A5FA",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.24,
+      "width": 0.76,
+      "height": 0.09,
+      "text": "ج: تهران ۱ الی ۲ روزه و شهرستان‌ها ۲ الی ۳ روز کاری تحویل میشه.",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#F1F5F9",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_5",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.4,
+      "width": 0.84,
+      "height": 0.2,
+      "cornerRadius": 16,
+      "backgroundColor": "#334155"
+    },
+    {
+      "id": "el_6",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.42,
+      "width": 0.76,
+      "height": 0.06,
+      "text": "س: امکان تعویض سایز داریم؟",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#60A5FA",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_7",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.48,
+      "width": 0.76,
+      "height": 0.09,
+      "text": "ج: بله تا ۴۸ ساعت بعد از تحویل با کمال میل تعویض سایز داریم.",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#F1F5F9",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_8",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.72,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "هر سوال دیگه‌ای داری تو کامنت‌ها بپرس 👇",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#93C5FD",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_9",
+      "type": "BRAND_NAME",
+      "x": 0.1,
+      "y": 0.83,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "@your_online_store",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#CBD5E1",
+      "textAlign": "CENTER"
+    }
+  ]
+}

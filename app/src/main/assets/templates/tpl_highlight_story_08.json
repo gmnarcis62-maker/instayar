@@ -1,0 +1,74 @@
+{
+  "id": "tpl_highlight_story_08",
+  "title": "کاور هایلایت رضایت مشتریان",
+  "category": "نظر مشتری",
+  "format": "HIGHLIGHT",
+  "isVip": false,
+  "tags": [
+    "هایلایت",
+    "کاور",
+    "اینستاگرام"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#18181B",
+    "gradientColors": [
+      "#27272A",
+      "#09090B"
+    ],
+    "angle": 45
+  },
+  "elements": [
+    {
+      "id": "el_photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/flower_nature_01.webp"
+    },
+    {
+      "id": "el_1",
+      "type": "SHAPE",
+      "x": 0.18,
+      "y": 0.18,
+      "width": 0.64,
+      "height": 0.64,
+      "shapeType": "CIRCLE",
+      "backgroundColor": "#18181B",
+      "borderColor": "#F59E0B",
+      "borderWidth": 4
+    },
+    {
+      "id": "el_2",
+      "type": "BADGE",
+      "x": 0.28,
+      "y": 0.35,
+      "width": 0.44,
+      "height": 0.12,
+      "text": "⭐ ۵ ستاره",
+      "fontSize": 15,
+      "fontWeight": "BOLD",
+      "textColor": "#18181B",
+      "backgroundColor": "#FBBF24"
+    },
+    {
+      "id": "el_3",
+      "type": "TEXT",
+      "x": 0.15,
+      "y": 0.54,
+      "width": 0.7,
+      "height": 0.1,
+      "text": "رضایت شما",
+      "fontSize": 18,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    }
+  ]
+}

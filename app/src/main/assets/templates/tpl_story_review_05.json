@@ -1,0 +1,89 @@
+{
+  "id": "tpl_story_review_05",
+  "title": "رضایت و بازخورد مشتری",
+  "category": "نظر مشتری",
+  "format": "STORY",
+  "isVip": true,
+  "tags": [
+    "رضایت",
+    "اعتماد",
+    "مشتری",
+    "استوری"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#064E3B",
+    "gradientColors": [
+      "#064E3B",
+      "#022C22"
+    ],
+    "angle": 150
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.28,
+      "y": 0.06,
+      "width": 0.44,
+      "height": 0.04,
+      "text": "⭐ رضایت شما افتخار ماست",
+      "fontSize": 11,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#059669"
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.12,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "پیام پرمحبت خریدار عزیزمون",
+      "fontSize": 18,
+      "fontWeight": "BOLD",
+      "textColor": "#6EE7B7",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.2,
+      "width": 0.84,
+      "height": 0.5,
+      "cornerRadius": 20,
+      "backgroundColor": "#065F46",
+      "borderColor": "#34D399",
+      "borderWidth": 2,
+      "placeholderLabel": "images/wood_texture_01.webp"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.73,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "«کیفیت کار فوق‌العاده بود و خیلی سریع به دستم رسید...»",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_5",
+      "type": "TEXT",
+      "x": 0.15,
+      "y": 0.82,
+      "width": 0.7,
+      "height": 0.05,
+      "text": "مرسی از انتخابتون 🙏🌹",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#A7F3D0",
+      "textAlign": "CENTER"
+    }
+  ]
+}

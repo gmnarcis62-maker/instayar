@@ -1,0 +1,90 @@
+{
+  "id": "tpl_post_celebration_06",
+  "title": "تبریک اعیاد و مناسبت‌ها",
+  "category": "مناسبتی",
+  "format": "POST_PORTRAIT",
+  "isVip": false,
+  "tags": [
+    "تبریک",
+    "مناسبت",
+    "عید",
+    "نوروز",
+    "یلدا"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#451A03",
+    "gradientColors": [
+      "#78350F",
+      "#291500"
+    ],
+    "angle": 135
+  },
+  "elements": [
+    {
+      "id": "el_1",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.08,
+      "width": 0.8,
+      "height": 0.08,
+      "text": "✨ فـرا رسـیـدن نـوروز بـاسـتـانـی",
+      "fontSize": 16,
+      "fontWeight": "BOLD",
+      "textColor": "#FDE68A",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_2",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.1,
+      "y": 0.18,
+      "width": 0.8,
+      "height": 0.44,
+      "cornerRadius": 24,
+      "backgroundColor": "#92400E",
+      "borderColor": "#FBBF24",
+      "borderWidth": 2,
+      "placeholderLabel": "images/shoes_bag_01.webp"
+    },
+    {
+      "id": "el_3",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.66,
+      "width": 0.84,
+      "height": 0.07,
+      "text": "سالی سرشار از سلامتی، برکت و شادکامی",
+      "fontSize": 15,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.74,
+      "width": 0.8,
+      "height": 0.06,
+      "text": "با آرزوی بهترین‌ها از طرف خانواده ما به شما",
+      "fontSize": 12,
+      "fontWeight": "NORMAL",
+      "textColor": "#FEF3C7",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_5",
+      "type": "BRAND_NAME",
+      "x": 0.1,
+      "y": 0.86,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "نام برند شما",
+      "fontSize": 14,
+      "fontWeight": "BOLD",
+      "textColor": "#FCD34D",
+      "textAlign": "CENTER"
+    }
+  ]
+}

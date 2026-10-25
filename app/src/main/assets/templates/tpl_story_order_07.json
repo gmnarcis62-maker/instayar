@@ -1,0 +1,158 @@
+{
+  "id": "tpl_story_order_07",
+  "title": "راهنمای سفارش‌گیری آسان",
+  "category": "سفارش‌گیری",
+  "format": "STORY",
+  "isVip": false,
+  "tags": [
+    "سفارش",
+    "نحوه_خرید",
+    "دایرکت",
+    "استوری"
+  ],
+  "background": {
+    "type": "GRADIENT",
+    "color": "#172554",
+    "gradientColors": [
+      "#1E40AF",
+      "#0F172A"
+    ],
+    "angle": 180
+  },
+  "elements": [
+    {
+      "id": "el_photo",
+      "type": "IMAGE_PLACEHOLDER",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.48,
+      "cornerRadius": 22,
+      "backgroundColor": "#233044",
+      "borderColor": "#FFFFFF",
+      "borderWidth": 1,
+      "placeholderLabel": "images/cosmetics_01.webp"
+    },
+    {
+      "id": "el_1",
+      "type": "BADGE",
+      "x": 0.25,
+      "y": 0.06,
+      "width": 0.5,
+      "height": 0.04,
+      "text": "🛒 راهنمای ثبت سفارش",
+      "fontSize": 12,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "backgroundColor": "#2563EB"
+    },
+    {
+      "id": "el_2",
+      "type": "TEXT",
+      "x": 0.08,
+      "y": 0.12,
+      "width": 0.84,
+      "height": 0.06,
+      "text": "چگونه در ۳ مرحله خرید کنیم؟",
+      "fontSize": 18,
+      "fontWeight": "BOLD",
+      "textColor": "#93C5FD",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_3",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.22,
+      "width": 0.84,
+      "height": 0.14,
+      "cornerRadius": 16,
+      "backgroundColor": "#1E3A8A"
+    },
+    {
+      "id": "el_4",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.24,
+      "width": 0.76,
+      "height": 0.1,
+      "text": "۱️⃣ انتخاب محصول: عکس یا اسم کار دلخواهتون رو اسکرین‌شات بگیرید.",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_5",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.39,
+      "width": 0.84,
+      "height": 0.14,
+      "cornerRadius": 16,
+      "backgroundColor": "#1E3A8A"
+    },
+    {
+      "id": "el_6",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.41,
+      "width": 0.76,
+      "height": 0.1,
+      "text": "۲️⃣ ارسال به دایرکت: سایز و رنگ مد نظرتون رو به دایرکت ارسال فرمایید.",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_7",
+      "type": "SHAPE",
+      "x": 0.08,
+      "y": 0.56,
+      "width": 0.84,
+      "height": 0.14,
+      "cornerRadius": 16,
+      "backgroundColor": "#1E3A8A"
+    },
+    {
+      "id": "el_8",
+      "type": "TEXT",
+      "x": 0.12,
+      "y": 0.58,
+      "width": 0.76,
+      "height": 0.1,
+      "text": "۳️⃣ واریز و ثبت آدرس: فیش واریزی همراه آدرس و کدپستی رو بفرستید.",
+      "fontSize": 13,
+      "fontWeight": "BOLD",
+      "textColor": "#FFFFFF",
+      "textAlign": "RIGHT"
+    },
+    {
+      "id": "el_9",
+      "type": "TEXT",
+      "x": 0.1,
+      "y": 0.76,
+      "width": 0.8,
+      "height": 0.05,
+      "text": "💬 هم‌اکنون به دایرکت پیام دهید",
+      "fontSize": 15,
+      "fontWeight": "BOLD",
+      "textColor": "#60A5FA",
+      "textAlign": "CENTER"
+    },
+    {
+      "id": "el_10",
+      "type": "BRAND_NAME",
+      "x": 0.1,
+      "y": 0.84,
+      "width": 0.8,
+      "height": 0.04,
+      "text": "@shop_direct_order",
+      "fontSize": 13,
+      "fontWeight": "NORMAL",
+      "textColor": "#BFDBFE",
+      "textAlign": "CENTER"
+    }
+  ]
+}
