@@ -24,21 +24,18 @@ jobs:
         with:
           packages: 'platform-tools'
 
-      # ✅ نصب Gradle مستقل از وجود gradlew
+      # ✅ 关键修复：将 Gradle 版本更新到 9.3.1，以满足 AGP 9.1.1 的要求
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.7'
+          gradle-version: '9.3.1'
 
-      # ✅ اسکریپت مقاوم: اگر gradlew بود از آن، وگرنه از gradle استفاده کن
       - name: Build Debug APK
         run: |
           if [ -f "./gradlew" ]; then
-            echo "Using gradlew wrapper..."
             chmod +x ./gradlew
             ./gradlew assembleDebug --stacktrace
           else
-            echo "gradlew not found, using system gradle..."
             gradle assembleDebug --stacktrace
           fi
 
