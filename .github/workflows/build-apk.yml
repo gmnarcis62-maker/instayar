@@ -19,20 +19,32 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # ✅ راه‌حل قطعی: استفاده از v4 و مشخص کردن صریح packages
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
         with:
           packages: 'platform-tools'
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+      # ✅ نصب Gradle مستقل از وجود gradlew
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
 
+      # ✅ اسکریپت مقاوم: اگر gradlew بود از آن، وگرنه از gradle استفاده کن
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: |
+          if [ -f "./gradlew" ]; then
+            echo "Using gradlew wrapper..."
+            chmod +x ./gradlew
+            ./gradlew assembleDebug --stacktrace
+          else
+            echo "gradlew not found, using system gradle..."
+            gradle assembleDebug --stacktrace
+          fi
 
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug-apk
           path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: warn
