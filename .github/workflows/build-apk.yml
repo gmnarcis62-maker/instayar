@@ -23,7 +23,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # ✅ راه‌حل اصلی: استفاده از v4 و مشخص کردن packages به‌صورت صریح
+      # ✅ راه‌حل نهایی: استفاده از v4 و مشخص کردن صریح packages
       - name: Setup Android SDK
         uses: android-actions/setup-android@v4
         with:
