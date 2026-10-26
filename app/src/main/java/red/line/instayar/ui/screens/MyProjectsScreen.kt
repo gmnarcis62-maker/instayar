@@ -28,16 +28,22 @@ import androidx.compose.material.icons.rounded.ContentCopy
 import androidx.compose.material.icons.rounded.Delete
 import androidx.compose.material.icons.rounded.Edit
 import androidx.compose.material.icons.rounded.FolderSpecial
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -77,6 +83,18 @@ fun MyProjectsScreen(
     val repository = remember { ProjectRepository(context) }
     val projects by repository.allProjects.collectAsState(initial = emptyList())
     val coroutineScope = rememberCoroutineScope()
+    var searchQuery by remember { mutableStateOf("") }
+    var formatFilter by remember { mutableStateOf("همه") }
+    var pendingDelete by remember { mutableStateOf<ProjectEntity?>(null) }
+    val visibleProjects = remember(projects, searchQuery, formatFilter) {
+        projects.filter { project ->
+            val matchesQuery = searchQuery.isBlank() ||
+                project.title.contains(searchQuery.trim(), ignoreCase = true) ||
+                project.formatName.contains(searchQuery.trim(), ignoreCase = true)
+            val matchesFormat = formatFilter == "همه" || project.formatName.contains(formatFilter, ignoreCase = true)
+            matchesQuery && matchesFormat
+        }.sortedByDescending { it.lastModified }
+    }
 
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -118,6 +136,54 @@ fun MyProjectsScreen(
                     Icon(imageVector = Icons.Rounded.Add, contentDescription = null, modifier = Modifier.size(18.dp))
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(text = "طرح جدید", style = MaterialTheme.typography.labelMedium)
+                }
+            }
+
+            if (projects.isNotEmpty()) {
+                Column(
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 4.dp),
+                    verticalArrangement = Arrangement.spacedBy(10.dp)
+                ) {
+                    OutlinedTextField(
+                        value = searchQuery,
+                        onValueChange = { searchQuery = it },
+                        modifier = Modifier.fillMaxWidth(),
+                        singleLine = true,
+                        shape = RoundedCornerShape(16.dp),
+                        placeholder = { Text("جست‌وجوی نام طرح یا قالب…", color = Color(0xFF94A3B8)) },
+                        leadingIcon = { Icon(Icons.Rounded.FolderSpecial, contentDescription = null, tint = BrandCyan) },
+                        colors = OutlinedTextFieldDefaults.colors(
+                            focusedTextColor = Color.White,
+                            unfocusedTextColor = Color.White,
+                            focusedContainerColor = DarkSurfaceCard,
+                            unfocusedContainerColor = DarkSurfaceCard,
+                            focusedBorderColor = BrandPurple,
+                            unfocusedBorderColor = Color(0x338B5CF6),
+                            cursorColor = BrandCyan
+                        )
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        listOf("همه", "استوری", "پست مربعی", "پست عمودی", "کاور هایلایت").forEach { filter ->
+                            val selected = formatFilter == filter
+                            Box(
+                                modifier = Modifier.weight(1f).clip(RoundedCornerShape(12.dp))
+                                    .background(if (selected) BrandPurple else DarkSurfaceCard)
+                                    .clickable { formatFilter = filter }
+                                    .padding(horizontal = 4.dp, vertical = 9.dp),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(filter, color = Color.White, fontSize = 10.sp, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                            }
+                        }
+                    }
+                    Text(
+                        text = "${visibleProjects.size.toPersianDigits()} مورد",
+                        color = Color(0xFF94A3B8),
+                        style = MaterialTheme.typography.labelSmall
+                    )
                 }
             }
 
@@ -190,7 +256,11 @@ fun MyProjectsScreen(
                 }
             } else {
                 // Projects Grid
-                LazyVerticalGrid(
+                if (visibleProjects.isEmpty()) {
+                    Box(Modifier.weight(1f).fillMaxWidth().padding(24.dp), contentAlignment = Alignment.Center) {
+                        Text("طرحی با این جست‌وجو پیدا نشد؛ عبارت یا فیلتر را تغییر دهید.", color = Color(0xFF94A3B8), textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+                    }
+                } else LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
                     contentPadding = PaddingValues(
                         start = 16.dp,
@@ -202,7 +272,7 @@ fun MyProjectsScreen(
                     verticalArrangement = Arrangement.spacedBy(14.dp),
                     modifier = Modifier.weight(1f).fillMaxWidth()
                 ) {
-                    items(projects, key = { it.id }) { project ->
+                    items(visibleProjects, key = { it.id }) { project ->
                         ProjectCardItem(
                             project = project,
                             repository = repository,
@@ -213,16 +283,31 @@ fun MyProjectsScreen(
                                     repository.duplicateProject(project.id)
                                 }
                             },
-                            onDelete = {
-                                coroutineScope.launch {
-                                    repository.deleteProject(project.id)
-                                }
-                            }
+                            onDelete = { pendingDelete = project }
                         )
                     }
                 }
             }
         }
+    }
+
+    pendingDelete?.let { project ->
+        AlertDialog(
+            onDismissRequest = { pendingDelete = null },
+            title = { Text("حذف پروژه؟", color = Color.White, fontWeight = FontWeight.Bold) },
+            text = { Text("طرح «${project.title}» برای همیشه از فهرست پروژه‌ها حذف می‌شود.", color = Color(0xFFCBD5E1)) },
+            confirmButton = {
+                TextButton(onClick = {
+                    pendingDelete = null
+                    coroutineScope.launch { repository.deleteProject(project.id) }
+                }) { Text("حذف شود", color = Color(0xFFF43F5E)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { pendingDelete = null }) { Text("انصراف", color = Color.White) }
+            },
+            containerColor = DarkSurfaceCardElevated,
+            shape = RoundedCornerShape(22.dp)
+        )
     }
 }
 

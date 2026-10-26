@@ -111,43 +111,47 @@ object ImageExportUtil {
         bitmap: Bitmap,
         title: String
     ): Uri? = withContext(Dispatchers.IO) {
-        val fileName = "Ghalibino_${System.currentTimeMillis()}.png"
+        val safeTitle = title.trim().replace(Regex("[^\\p{L}\\p{N}._ -]"), "_").take(60).ifBlank { "طرح_قالبینو" }
+        val fileName = "${safeTitle}_${System.currentTimeMillis()}.png"
+        val resolver = context.contentResolver
         var uri: Uri? = null
-
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                val contentValues = ContentValues().apply {
-                    put(MediaStore.MediaColumns.DISPLAY_NAME, fileName)
-                    put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
-                    put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/Ghalibino")
-                    put(MediaStore.MediaColumns.IS_PENDING, 1)
+                val values = ContentValues().apply {
+                    put(MediaStore.Images.Media.DISPLAY_NAME, fileName)
+                    put(MediaStore.Images.Media.MIME_TYPE, "image/png")
+                    put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/Ghalibino")
+                    put(MediaStore.Images.Media.IS_PENDING, 1)
                 }
-
-                val resolver = context.contentResolver
-                uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
-
-                if (uri != null) {
-                    resolver.openOutputStream(uri)?.use { outputStream ->
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+                uri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+                    ?: throw IllegalStateException("امکان ساخت فایل در گالری وجود ندارد")
+                val stream = resolver.openOutputStream(uri, "w")
+                    ?: throw IllegalStateException("امکان نوشتن فایل وجود ندارد")
+                stream.use { out ->
+                    if (!bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)) {
+                        throw IllegalStateException("تبدیل تصویر به فایل ناموفق بود")
                     }
-                    contentValues.clear()
-                    contentValues.put(MediaStore.MediaColumns.IS_PENDING, 0)
-                    resolver.update(uri, contentValues, null, null)
+                    out.flush()
                 }
+                val ready = ContentValues().apply { put(MediaStore.Images.Media.IS_PENDING, 0) }
+                if (resolver.update(uri, ready, null, null) <= 0) throw IllegalStateException("ثبت نهایی تصویر ناموفق بود")
             } else {
                 val picturesDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
-                val appDir = File(picturesDir, "Ghalibino").apply { if (!exists()) mkdirs() }
+                val appDir = File(picturesDir, "Ghalibino")
+                if (!appDir.exists() && !appDir.mkdirs()) throw IllegalStateException("ساخت پوشه تصاویر ممکن نشد")
                 val file = File(appDir, fileName)
                 FileOutputStream(file).use { out ->
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
+                    if (!bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)) throw IllegalStateException("تبدیل تصویر ناموفق بود")
+                    out.flush()
                 }
+                android.media.MediaScannerConnection.scanFile(context, arrayOf(file.absolutePath), arrayOf("image/png"), null)
                 uri = Uri.fromFile(file)
             }
+            uri
         } catch (e: Exception) {
-            e.printStackTrace()
+            uri?.let { try { resolver.delete(it, null, null) } catch (_: Exception) {} }
+            null
         }
-
-        uri
     }
 
     suspend fun shareBitmap(
@@ -157,11 +161,14 @@ object ImageExportUtil {
     ): Intent? = withContext(Dispatchers.IO) {
         try {
             val cacheImagesDir = File(context.cacheDir, "images").apply {
-                if (!exists()) mkdirs()
+                if (!exists() && !mkdirs()) throw IllegalStateException("ساخت پوشه موقت اشتراک‌گذاری ناموفق بود")
             }
             val sharedFile = File(cacheImagesDir, "shared_story_${System.currentTimeMillis()}.png")
             FileOutputStream(sharedFile).use { out ->
-                bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)
+                if (!bitmap.compress(Bitmap.CompressFormat.PNG, 100, out)) {
+                    throw IllegalStateException("ساخت فایل تصویر برای اشتراک‌گذاری ناموفق بود")
+                }
+                out.flush()
             }
 
             val fileUri: Uri = FileProvider.getUriForFile(

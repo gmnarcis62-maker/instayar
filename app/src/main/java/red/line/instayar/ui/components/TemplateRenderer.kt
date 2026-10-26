@@ -239,6 +239,25 @@ private fun DrawScope.drawShapeElement(element: TemplateElement, x: Float, y: Fl
 }
 
 private fun DrawScope.drawImagePlaceholder(element: TemplateElement, x: Float, y: Float, w: Float, h: Float, context: Context? = null) {
+    val userImagePath = element.imagePath
+    if (!userImagePath.isNullOrBlank()) {
+        try {
+            val bitmap = BitmapFactory.decodeFile(userImagePath)
+            if (bitmap != null) {
+                drawIntoCanvas { canvas ->
+                    val native = canvas.nativeCanvas
+                    val save = native.save()
+                    val radius = element.cornerRadius * (w / 300f).coerceAtLeast(0.5f)
+                    val clip = android.graphics.Path().apply { addRoundRect(RectF(x, y, x + w, y + h), radius, radius, android.graphics.Path.Direction.CW) }
+                    native.clipPath(clip)
+                    native.drawBitmap(bitmap, null, RectF(x, y, x + w, y + h), Paint(Paint.ANTI_ALIAS_FLAG or Paint.FILTER_BITMAP_FLAG))
+                    native.restoreToCount(save)
+                    bitmap.recycle()
+                }
+                return
+            }
+        } catch (_: Exception) { }
+    }
     val assetName = element.placeholderLabel
     if (context != null && !assetName.isNullOrBlank() && assetName.startsWith("images/")) {
         try {

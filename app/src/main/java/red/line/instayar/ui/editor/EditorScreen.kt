@@ -1,6 +1,8 @@
 package red.line.instayar.ui.editor
 
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -26,6 +28,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material.icons.automirrored.rounded.Redo
 import androidx.compose.material.icons.automirrored.rounded.Undo
 import androidx.compose.material.icons.rounded.Check
+import androidx.compose.material.icons.rounded.AddPhotoAlternate
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
@@ -75,6 +78,10 @@ fun EditorScreen(
     editorViewModel: EditorViewModel = viewModel()
 ) {
     val state by editorViewModel.uiState.collectAsState()
+    val screenContext = androidx.compose.ui.platform.LocalContext.current
+    val imagePicker = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri != null) editorViewModel.applyUserImage(screenContext, uri)
+    }
 
     var showExitConfirmDialog by remember { mutableStateOf(false) }
 
@@ -145,6 +152,23 @@ fun EditorScreen(
                     .fillMaxSize()
                     .statusBarsPadding()
             ) {
+                // Quick, real gallery import action; user image is copied into private app storage.
+                Row(
+                    modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp),
+                    horizontalArrangement = Arrangement.End,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Button(
+                        onClick = { imagePicker.launch("image/*") },
+                        colors = ButtonDefaults.buttonColors(containerColor = DarkSurfaceCardElevated),
+                        shape = RoundedCornerShape(12.dp)
+                    ) {
+                        Icon(Icons.Rounded.AddPhotoAlternate, contentDescription = null, tint = BrandCyan)
+                        Spacer(Modifier.width(8.dp))
+                        Text("افزودن عکس دلخواه", color = Color.White)
+                    }
+                }
+
                 // 1. Top Action Bar
                 EditorTopBar(
                     canUndo = state.canUndo,

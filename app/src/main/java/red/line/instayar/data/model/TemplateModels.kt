@@ -65,6 +65,8 @@ data class TemplateElement(
     val borderWidth: Float = 0f,
     val badgeIcon: String? = null, // DISCOUNT, STAR, CROWN, FIRE, CHECK
     val placeholderLabel: String? = null,
+    // App-private copied image path; remains available after the picker grant expires.
+    val imagePath: String? = null,
     val hasShadow: Boolean = false,
     val shadowColor: String = "#80000000"
 )

@@ -2,6 +2,9 @@ package red.line.instayar.ui.editor
 
 import android.app.Application
 import android.content.Context
+import android.net.Uri
+import java.io.File
+import java.io.FileOutputStream
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import red.line.instayar.data.model.BrandProfile
@@ -406,6 +409,42 @@ class EditorViewModel(application: Application) : AndroidViewModel(application) 
         selectElement(newId)
     }
 
+
+    /** Copies a gallery image into app-private storage so it remains usable after picker permission expires. */
+    fun applyUserImage(context: Context, source: Uri) {
+        viewModelScope.launch {
+            try {
+                val tpl = _uiState.value.currentTemplate ?: return@launch
+                val imagesDir = File(getApplication<Application>().filesDir, "user_images").apply {
+                    if (!exists() && !mkdirs()) throw IllegalStateException("ساخت پوشه تصاویر ناموفق بود")
+                }
+                val target = File(imagesDir, "image_${System.currentTimeMillis()}.img")
+                val input = context.contentResolver.openInputStream(source)
+                    ?: throw IllegalStateException("خواندن عکس انتخاب‌شده ممکن نیست")
+                input.use { ins -> FileOutputStream(target).use { out -> ins.copyTo(out); out.flush() } }
+                val selectedId = _uiState.value.selectedElementId
+                val hasSelectedImageFrame = tpl.elements.any { it.id == selectedId && it.type == ElementType.IMAGE_PLACEHOLDER }
+                val updated = if (hasSelectedImageFrame) {
+                    tpl.copy(elements = tpl.elements.map { el ->
+                        if (el.id == selectedId) el.copy(imagePath = target.absolutePath, placeholderLabel = null) else el
+                    })
+                } else {
+                    val id = "image_${System.currentTimeMillis()}"
+                    val imageElement = TemplateElement(
+                        id = id, type = ElementType.IMAGE_PLACEHOLDER, x = 0.15f, y = 0.28f,
+                        width = 0.7f, height = 0.38f, imagePath = target.absolutePath,
+                        cornerRadius = 18f, backgroundColor = "#334155", borderColor = "#FFFFFF", borderWidth = 1f
+                    )
+                    tpl.copy(elements = tpl.elements + imageElement)
+                }
+                pushHistory(updated)
+                _uiState.update { it.copy(selectedElementId = updated.elements.lastOrNull { e -> e.imagePath == target.absolutePath }?.id, saveMessage = "عکس اضافه شد و برای استفاده مجدد ذخیره شد") }
+            } catch (e: Exception) {
+                showSaveFeedback("افزودن عکس ناموفق بود: ${e.localizedMessage ?: "خطای دسترسی به فایل"}")
+            }
+        }
+    }
+
     fun exportToGallery(context: Context, onComplete: (Boolean) -> Unit) {
         val integrity = AppIntegrityChecker.verifyAppIntegrity(context)
         if (integrity is IntegrityResult.Compromised) {
@@ -413,22 +452,27 @@ class EditorViewModel(application: Application) : AndroidViewModel(application) 
             onComplete(false)
             return
         }
-
-        val tpl = _uiState.value.currentTemplate ?: return
+        val tpl = _uiState.value.currentTemplate ?: run { onComplete(false); return }
         viewModelScope.launch {
-            _uiState.update { it.copy(isExporting = true) }
-            val isVip = _uiState.value.isVipUser
-            val bitmap = ImageExportUtil.renderTemplateToBitmap(tpl, _uiState.value.brandProfile, isVip, getApplication<Application>().applicationContext)
-            val uri = ImageExportUtil.saveBitmapToGallery(context, bitmap, tpl.title)
-            _uiState.update { it.copy(isExporting = false) }
-
-            if (uri != null) {
-                projectRepository.saveProject(tpl)
-                showSaveFeedback("طرح با موفقیت و بالاترین کیفیت در گالری ذخیره شد! 🎉")
-                onComplete(true)
-            } else {
-                showSaveFeedback("خطا در ذخیره‌سازی تصویر!")
-                onComplete(false)
+            _uiState.update { it.copy(isExporting = true, saveMessage = null) }
+            var success = false
+            try {
+                val bitmap = ImageExportUtil.renderTemplateToBitmap(tpl, _uiState.value.brandProfile, _uiState.value.isVipUser, getApplication<Application>().applicationContext)
+                try {
+                    val uri = ImageExportUtil.saveBitmapToGallery(context, bitmap, tpl.title)
+                    if (uri != null) {
+                        projectRepository.saveProject(tpl)
+                        showSaveFeedback("طرح با موفقیت در پوشه Pictures/Ghalibino ذخیره شد")
+                        success = true
+                    } else {
+                        showSaveFeedback("ذخیره‌سازی انجام نشد. فضای خالی گوشی و مجوز دسترسی را بررسی کنید و دوباره تلاش کنید.")
+                    }
+                } finally { bitmap.recycle() }
+            } catch (e: Exception) {
+                showSaveFeedback("خطا هنگام ساخت یا ذخیره تصویر: ${e.localizedMessage ?: "خطای ناشناخته"}")
+            } finally {
+                _uiState.update { it.copy(isExporting = false) }
+                onComplete(success)
             }
         }
     }
@@ -442,16 +486,27 @@ class EditorViewModel(application: Application) : AndroidViewModel(application) 
 
         val tpl = _uiState.value.currentTemplate ?: return
         viewModelScope.launch {
-            _uiState.update { it.copy(isExporting = true) }
-            val isVip = _uiState.value.isVipUser
-            val bitmap = ImageExportUtil.renderTemplateToBitmap(tpl, _uiState.value.brandProfile, isVip, getApplication<Application>().applicationContext)
-            val intent = ImageExportUtil.shareBitmap(context, bitmap, preferInstagram = true)
-            _uiState.update { it.copy(isExporting = false) }
-
-            if (intent != null) {
-                context.startActivity(intent)
-            } else {
-                showSaveFeedback("خطا در آماده‌سازی اشتراک‌گذاری!")
+            _uiState.update { it.copy(isExporting = true, saveMessage = null) }
+            var bitmap: android.graphics.Bitmap? = null
+            try {
+                val isVip = _uiState.value.isVipUser
+                bitmap = ImageExportUtil.renderTemplateToBitmap(
+                    tpl,
+                    _uiState.value.brandProfile,
+                    isVip,
+                    getApplication<Application>().applicationContext
+                )
+                val intent = ImageExportUtil.shareBitmap(context, bitmap, preferInstagram = true)
+                if (intent != null) {
+                    context.startActivity(intent)
+                } else {
+                    showSaveFeedback("آماده‌سازی اشتراک‌گذاری ناموفق بود. فضای خالی گوشی را بررسی و دوباره تلاش کنید.")
+                }
+            } catch (e: Exception) {
+                showSaveFeedback("خطا هنگام آماده‌سازی اشتراک‌گذاری: ${e.localizedMessage ?: "خطای ناشناخته"}")
+            } finally {
+                bitmap?.recycle()
+                _uiState.update { it.copy(isExporting = false) }
             }
         }
     }
